@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: "Muli" serif;
+  font-family: "Muli", serif;
   overflow: hidden;
   margin: 0;
   background: #111;
@@ -19,6 +19,7 @@ body {
 }
 
 .slide {
+  min-height: 80px;
   height: 80vh;
   border-radius: 20px;
   margin: 10px;
@@ -29,7 +30,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  transition: all 500ms ease-in-out 0.4s;
+  transition: flex 0.5s ease-in-out;
 }
 
 .slide h3 {
@@ -48,4 +49,54 @@ body {
 .slide.active h3 {
   opacity: 1;
   transition: opacity 0.3s ease-in;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+  }
+
+  .slide {
+    height: 12vh;
+    margin: 5px 0;
+    flex: none;
+  }
+
+  .slide.active {
+    height: 40vh;
+  }
+
+  .slide h3 {
+    font-size: 18px;
+    bottom: 10px;
+    left: 15px;
+  }
+}
+
+/* 📱 Маленькие телефоны */
+
+@media (max-width: 480px) {
+  .slide {
+    height: 10vh;
+  }
+
+  .slide.active {
+    height: 35vh;
+  }
+
+  .slide h3 {
+    font-size: 16px;
+    bottom: 8px;
+    left: 10px;
+  }
+
+  .container {
+    padding: 5px;
+  }
 }
